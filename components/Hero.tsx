@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ onNext }) => {
   const generateReason = async () => {
     setLoading(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
       const response = await ai.models.generateContent({
         model: 'gemini-1.5-flash',
         contents: "Give a one-sentence, deeply heartwarming and unique reason why someone is a perfect best friend. Focus on loyalty, shared laughter, or being a good influence. STRICT RULE: DO NOT use 'babe', 'darling', 'sister', 'family', 'honey'. Keep it pure best friendship. Use 'bestie' or 'friend'.",

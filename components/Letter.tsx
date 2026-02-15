@@ -8,7 +8,7 @@ const Letter: React.FC = () => {
   useEffect(() => {
     const fetchPoem = async () => {
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
         const response = await ai.models.generateContent({
           model: 'gemini-3-flash-preview',
           contents: "Write a short, soulful and deeply heartwarming 6-line poem for a best friend's birthday. Focus on her being my safe place and our shared journey. STRICT RULE: NO 'sister', 'family', 'babe', 'honey'. Pure best friendship.",

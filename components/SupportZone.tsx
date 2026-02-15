@@ -9,7 +9,7 @@ const SupportZone: React.FC = () => {
   const getSupportMessage = async () => {
     setLoading(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: "The user's best friend is feeling low. Give a short, incredibly warm, and poetic message of support. Focus on being their anchor. STRICT RULE: DO NOT use 'babe', 'darling', 'sister', 'family'. Focus on best friendship.",
